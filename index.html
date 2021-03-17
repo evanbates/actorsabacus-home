@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <style>
+#tabs-with-content .tabs:not(:last-child) {
+  margin-bottom: 0;
+}
 
+#tabs-with-content .tab-content {
+  padding: 1rem;
+  display: none;
+}
+
+#tabs-with-content .tab-content.is-active {
+  display: block;
+}
 
   </style>
   <head>
@@ -9,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>actors abacus</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -18,11 +30,11 @@
           <img src="camera.png" style="max-height: 60px">
         </a>
     
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </a> -->
       </div>
     
       <div id="navbarBasicExample" class="navbar-menu">
@@ -42,9 +54,7 @@
               <a class="navbar-item">
                 Email
               </a>
-              <a class="navbar-item">
-                Form
-              </a>
+            
            
               <hr class="navbar-divider">
               <a class="navbar-item">
@@ -80,24 +90,51 @@
      <!--- //tabs body section -->
   <section class="section">
     <div class="container">
-  
-      <div class="tabs">
-        <ul>
-          <li class="is-active"><a>Screenshots</a></li>
-          <li><a>How to Use</a></li>
-          <li><a>Videos</a></li>
-          <li><a>Documents</a></li>
-        </ul>
+      <div id="tabs-with-content">
+        <div class="tabs is-centered">
+          <ul>
+            <li><a>Screenshots</a></li>
+            <li><a>More Screenshots</a></li>
+            <li><a>Videos</a></li>
+            <li><a>Documents</a></li>
+          </ul>
+        </div>
+        <div>
+          <section class="tab-content">  
+            <div class="columns">
+              <div class="column"><img src="iphonevert.png"></div>
+              <div class="column"><img src="results_vert.png"></div>
+              <div class="column"><img src="datepicker.png"></div>
+              <div class="column"><img src="scroll-down.png"></div>
+            
+          </div></section>
+
+          <section class="tab-content">
+            <div class="columns">
+            <div class="column"><img src="self-email.png"></div>
+            <div class="column"><img src="results_vert.png"></div>
+            <div class="column"><img src="datepicker.png"></div>
+            <div class="column"><img src="scroll-down.png"></div>
+            </div>
+          </section>
+          <section class="tab-content">Videos content</section>
+          <section class="tab-content">Documents content</section>
+        </div>
       </div>
 
+      <!-- <div id="modl" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <p class="image is-4by3">
+            <img src="iphonevert.png" style="max-width: 400px";>
+          </p>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div> -->
+
+
       <!--//screenshots section -->
-      <div class="columns">
-        <div class="column"><img src="iphonevert.png"></div>
-        <div class="column"><img src="results_vert.png"></div>
-        <div class="column"><img src="datepicker.png"></div>
-        <div class="column"><img src="scroll-down.png"></div>
-        <div class="column"><img src="self-email.png"></div>
-      </div>
+    
     </div>
   </section>
 
@@ -109,6 +146,44 @@
       </p>
     </div>
   </footer>
+
+<script>
+let tabsWithContent = (function () {
+  let tabs = document.querySelectorAll('.tabs li');
+  let tabsContent = document.querySelectorAll('.tab-content');
+
+  let deactvateAllTabs = function () {
+    tabs.forEach(function (tab) {
+      tab.classList.remove('is-active');
+    });
+  };
+
+  let hideTabsContent = function () {
+    tabsContent.forEach(function (tabContent) {
+      tabContent.classList.remove('is-active');
+    });
+  };
+
+  let activateTabsContent = function (tab) {
+    tabsContent[getIndex(tab)].classList.add('is-active');
+  };
+
+  let getIndex = function (el) {
+    return [...el.parentElement.children].indexOf(el);
+  };
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      deactvateAllTabs();
+      hideTabsContent();
+      tab.classList.add('is-active');
+      activateTabsContent(tab);
+    });
+  })
+
+  tabs[0].click();
+})();
+</script>
 
   </body>
 </html>
