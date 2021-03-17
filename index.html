@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <style>
+
+
+  </style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,66 +11,59 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   </head>
   <body>
+
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="app-store.png" width="112" height="28">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="camera.png" style="max-height: 60px">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+        
+    
+          <a class="navbar-item">
+            Documentation
           </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Contact
             </a>
-      
-            <a class="navbar-item">
-              Documentation
-            </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Email
               </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
-              </div>
+              <a class="navbar-item">
+                Form
+              </a>
+           
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
             </div>
           </div>
         </div>
-      </nav>
+    
+        <div class="navbar-end">
+          <a class="navbar-item">
+            <img src="app-store.png" style="max-height: 50px">
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+   <!--hero text-->
       <section class="hero">
         <div class="hero-body">
           <p class="title">
@@ -76,9 +73,11 @@
           <p class="subtitle">
             Actors Abacus lets you calculate union wages<strong> easily</strong> and send yourself a record of your results (in searchable text format). Continually updated.
           </p>
+   
         </div>
       </section>
 
+     <!--- //tabs body section -->
   <section class="section">
     <div class="container">
   
@@ -91,25 +90,22 @@
         </ul>
       </div>
 
+      <!--//screenshots section -->
       <div class="columns">
         <div class="column"><img src="iphonevert.png"></div>
         <div class="column"><img src="results_vert.png"></div>
         <div class="column"><img src="datepicker.png"></div>
         <div class="column"><img src="scroll-down.png"></div>
         <div class="column"><img src="self-email.png"></div>
-
-   
       </div>
-
     </div>
   </section>
 
+  <!-- //footer -->
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Actors Abacus</strong> by <a href="https://jgthms.com">Evan Bates</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        <strong>Actors Abacus</strong> &copy;2021 by <a href="https://jgthms.com">Evan Bates</a>
       </p>
     </div>
   </footer>
